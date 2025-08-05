@@ -1,0 +1,6 @@
+---
+user: debian
+nginx_port: 80
+website_name: ryoza_service
+server_name: ryoza.duckdns.org
+peer_address: http://localhost:8080

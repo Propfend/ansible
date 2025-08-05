@@ -1,0 +1,14 @@
+- name: Download Paddler
+  get_url:
+    url: https://github.com/intentee/paddler/releases/download/v1.1.0/paddler-bin-linux-amd64
+    dest: "/usr/local/bin/paddler"
+
+- name: Download Paddler
+  shell: sudo chmod +x /usr/local/bin/paddler
+
+- name: Run Paddler
+  shell: |
+    paddler balancer --management-addr=127.0.0.1:8080 --inference-addr=127.0.0.1:8061
+    paddler agent --management-addr=127.0.0.1:8080 --slots 2 --agent-name=agent1
+    paddler agent --management-addr=127.0.0.1:8080 --slots 2 --agent-name=agent2
+    paddler agent --management-addr=127.0.0.1:8080 --slots 2 --agent-name=agent3
