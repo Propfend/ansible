@@ -1,4 +1,4 @@
-- hosts: linux
+- hosts: localhost
   name: Install and run Nginx
   become: yes
   roles: 
